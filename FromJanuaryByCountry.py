@@ -44,7 +44,7 @@ class CoronaVirusSpider(object):
             statistics_data_url = country['statisticsData']
             statistics_data_json_str = self.get_content_from_url(statistics_data_url)
             # 4. 把json数据转化为python类型的数据，添加到列表中
-            statistics_data = json.loads(statistics_data_json_str)['data']
+            statistics_data = json.loads(statistics_data_json_str)['excel']
             for one_day in statistics_data:
                 one_day['provinceName'] = country['provinceName']
                 if country.get('countryShortCode'):

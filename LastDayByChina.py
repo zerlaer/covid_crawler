@@ -63,6 +63,7 @@ class CoronaVirusSpider(object):
         excel_file = 'data/last_day_china_data.xlsx'
         self.save_to_json(last_day_china_list, json_file)
         self.save_to_excel(json_file, excel_file)
+        df = pd.DataFrame(last_day_china_list)
         print('最近一日中国各省疫情数据保存成功')
     def run(self):
         self.last_day_corona_virus_of_china()
